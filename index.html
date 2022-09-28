@@ -1,0 +1,474 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+outlined" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Outfit&family=Ruda:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Outfit&family=Ruda:wght@500&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 1em;
+            background-color: #171519;
+            min-height: 100vh;
+            border: 2px solid green;
+        }
+        
+        button {
+            background-color: #181719;
+            border: 1px solid #FFFFFF;
+            padding: 8px;
+            font-size: 8px;
+            color: white;
+        }
+        
+        .container {
+            width: auto !important;
+            height: 300px;
+            position: relative;
+        }
+        
+        @media screen and (max-width: 640px) {
+            .harmburger-menu {
+                display: block;
+                position: relative;
+                width: 2em;
+                height: 2rem;
+                background-color: #942b2b;
+                display: flex !important;
+                position: fixed;
+                left: 60%;
+                top: 15px;
+                cursor: pointer;
+                display: block;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 2px solid white;
+                /* transform: rotate(135deg);
+                transform: rotate(225deg);
+                transform: rotate(90deg); */
+            }
+            /* .harmburger-menu, */
+            .bar :before,
+            bar:after {
+                content: '';
+                display: block;
+                position: fixed;
+                height: 4px;
+                margin-top: 5px;
+                width: 20px;
+                cursor: pointer;
+                margin: 6px, 0px;
+                background: rgb(247, 243, 243);
+                transition: all 0.5s ease-in-out;
+                border-radius: 4px solid white;
+                border-color: white;
+            }
+            .navbar {
+                border: 1px solid red;
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-item:hover li {
+                font-size: 18px;
+                width: 100%;
+                flex-direction: column;
+            }
+            #nav-list {
+                display: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-top: 80%;
+                font-size: 30px;
+                background-color: black;
+                z-index: 9;
+                text-align: center;
+            }
+            #moder-interior {
+                font-family: lora;
+                font-size: 35px;
+                font-weight: 300;
+                font-style: normal;
+                margin-block: 1em;
+            }
+            #full-service {
+                font-weight: 200;
+                font-size: 16px;
+                font-family: 'Montserrat';
+                color: #FFFFFF;
+                font-stretch: expanded;
+                margin-block: 0.5px
+            }
+            p:nth-child(2) {
+                top: 18rem;
+                font-weight: 200;
+                font-family: 'Montserrat';
+                color: #FFFFFF;
+                font-stretch: expanded;
+                margin-block: 20px
+            }
+            img {
+                top: 30em;
+                display: block;
+                height: 100%;
+                max-width: 100%;
+                width: 100%;
+            }
+            #hamburger-menu,
+            #close-menu {
+                /* position: static; */
+                display: block;
+                width: unset;
+                height: unset;
+                margin-block: unset;
+                max-width: 100%;
+                cursor: pointer;
+                /* z-index: 100; */
+            }
+            #close-menu {
+                display: none;
+                cursor: pointer;
+                z-index: -100;
+            }
+            /* #close-menu {
+                display: none;
+                cursor: pointer;
+                z-index: 100;
+            } */
+            .card {
+                background-color: #181719;
+                box-shadow: 50px;
+                box-shadow: 0 2Ípx 2px 0 black, 0 6px 20px 0 black;
+                width: 78vw;
+                padding: 1em;
+                position: absolute;
+                top: 82%;
+                left: 13%;
+            }
+            #img2 {
+                height: 45px;
+                width: 45px;
+                border-radius: 50%;
+            }
+            h4 {
+                font-family: 'Montserrat';
+                font-size: 16px;
+                color: #FFFFFF;
+                font-weight: 400;
+            }
+            #interiordesign {
+                color: #828282
+            }
+            .designed2020 {
+                font-family: 'Lora';
+                color: #FFFFFF;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+            }
+            footer {
+                width: 287px;
+                height: 17px;
+                left: 8px;
+                position: absolute;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                top: 700px;
+                font-size: 12px;
+                line-height: 17px;
+                text-align: center;
+                color: #A9A9A9;
+            }
+            /* @media screen and (min-width: 700px) {
+                .harmburger-close-menu,
+                #hamburger-menu,
+                #close-menu {
+                    display: flex;
+                }
+            }
+            @media screen and (min-width: 700px) {
+                #close-menu {
+                    display: none;
+                }
+            }
+            @media screen and (min-width: 700px) {
+                .harmburger-close-menu {
+                    display: none;
+                }
+            } */
+            @media screen and (min-width: 700px) {
+                body {
+                    box-sizing: border-box;
+                    margin: 0;
+                    border: 2px solid green;
+                }
+            }
+            @media screen and (min-width: 600px) {
+                #button {
+                    display: grid;
+                    border: 1px solid #FFFFFF;
+                    padding: 7px;
+                    width: 15em;
+                    margin: 20px;
+                    height: 2em;
+                    justify-content: auto;
+                }
+            }
+            .harmburger-menu,
+            .bar {
+                display: hidden;
+                position: fixed;
+                height: 1px;
+                width: 20px;
+                cursor: pointer;
+                margin: 10px;
+                background: rgb(247, 243, 243);
+                transition: all 0.5s ease-in-out;
+                border-radius: 4px solid white;
+                border-color: white;
+            }
+        }
+        
+        @media screen and (min-width: 700px) {
+            .nav-list li {
+                display: inline-block;
+                justify-content: flex-end;
+                margin-inline-start: 12.5rem;
+            }
+        }
+        
+        @media screen and (min-width: 700px) {
+            .navbar {
+                display: flex;
+                background-color: #181719;
+                align-items: center;
+                height: 6rem;
+                width: 100%;
+                justify-content: flex-start
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            #full-service {
+                position: absolute;
+                font-family: 'Montserrat';
+                font-weight: lighter;
+                font-size: 22px;
+                color: #f9f3f3;
+                font-stretch: extra-expanded;
+                width: 300px;
+                line-height: normal;
+                left: 25px;
+                top: 25rem;
+                margin-block: 35px;
+            }
+            .harmburger-close-menu {
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            #moder-interior {
+                font-family: 'Lora';
+                position: absolute;
+                display: grid;
+                top: 22.5rem;
+                font-size: 50px;
+                font-weight: 300;
+                font-style: normal;
+                color: #FFFFFF;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            img {
+                width: initial;
+                height: 78%;
+                left: 38em;
+                top: 18.5rem;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            .container {
+                top: -28em;
+                left: 38em;
+                min-width: 100%;
+                height: 45em;
+                border: 2px solid green;
+                position: relative;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            p:nth-child(2) {
+                font-family: 'Montserrat';
+                font-weight: bolder;
+                font-size: 22px;
+                color: #FFFFFF;
+                font-stretch: extra-expanded;
+                line-height: normal;
+                /* margin-left: 17px; */
+                margin-top: 24em;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            .card {
+                top: 67%;
+                left: 24%;
+                height: 26%;
+                width: 34%;
+                background-color: #181719;
+                box-shadow: 0 2Ípx 21px 0 black, 0 6px 20px 0 black;
+                z-index: 1;
+                position: absolute;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            #img2 {
+                height: 50px;
+                width: 50px;
+                left: 56rem;
+                border-radius: 50%;
+                border: 2px transparent solid;
+                margin: 20px;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            .designed2020 {
+                font-family: 'Lora';
+                font-style: normal;
+                font-weight: 600;
+                font-stretch: extra-expanded;
+                font-size: 24px;
+                margin: 1px 20px;
+                color: #FFFFFF
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            #interiordesign {
+                color: #828282
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            h4 {
+                font-family: 'Montserrat';
+                font-size: 16px;
+                top: 47rem;
+                color: #FFFFFF;
+                font-weight: 400;
+                left: 60rem;
+                margin-block: 5px;
+                padding-left: 15px;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            footer {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #A9A9A9;
+                margin-top: -20em;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            #this-moderator {
+                font-family: ' Crimson Pro';
+                font-size: 12px;
+                align-items: center;
+                display: flex;
+                font-weight: 200
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar">
+            <button class="text-slate-300 " id="'button">
+                THIS INTERIOR
+        </button>
+            <ul class='nav-list text-white' id="nav-list">
+                <li class='nav-item '>
+                    <a class='nav-link' href="#">Home</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' href="#">Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a class='nav-link' href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class='nav-link' href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="harmburger-close-menu">
+                <img id='hamburger-menu' src="/assets/icon-hamburger.svg" />
+                <img id='close-menu' src="/assets/icon-close.svg" />
+            </div>
+        </nav>
+
+        <h1 class="text-3xl text-white font-lora font-bold " id="moder-interior">
+            Modern Interior
+        </h1>
+        <div>
+            <p class=' text-slate-300 ' id="full-service">A full-Service residential & <br> commercial interior design and
+                <br> staging company offering<br> professional organizing &<br> eco-services</p>
+            <p class="readmore">Read More >
+            </p>
+        </div>
+        <div class="container">
+            <img src="/assets/photo1.png" href="interior-deco">
+            <div class='card '>
+                <div class='flex gap-4 mb-4'>
+                    <img src="/assets/photo2.png" id="img2">
+                    <h4 class='font-bold-300 '>Aliza Webber<br>
+                        <span class='text-grey-500 ' id="interiordesign">Interior designer</span></h4>
+                </div>
+                <h3 class="designed2020 ">Designed in 2020 by <br>Aliza Webber</h3>
+            </div>
+        </div>
+        <footer>created by princeKaymax-devChallenges.io</footer>
+    </div>
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const navList = document.getElementById('nav-list');
+        hamburger.addEventListener('click', () => {
+            navList.style.display = 'block'
+            closeMenu.style.display = 'block'
+            hamburger.style.display = 'none'
+
+        })
+        closeMenu.addEventListener('click', () => {
+            navList.style.display = 'none'
+            closeMenu.style.display = 'none'
+            hamburger.style.display = 'block'
+        })
+    </script>
+</body>
+
+</html>
