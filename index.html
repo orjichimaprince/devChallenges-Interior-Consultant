@@ -18,11 +18,11 @@
         body {
             padding: 1em;
             background-color: #171519;
-            min-height: 100vh;
-            border: 2px solid green;
+            max-height: 100vh;
         }
         
         button {
+            display: block;
             background-color: #181719;
             border: 1px solid #FFFFFF;
             padding: 8px;
@@ -32,7 +32,6 @@
         
         .container {
             width: auto !important;
-            height: 300px;
             position: relative;
         }
         
@@ -52,28 +51,8 @@
                 flex-direction: column;
                 justify-content: space-between;
                 border: 2px solid white;
-                /* transform: rotate(135deg);
-                transform: rotate(225deg);
-                transform: rotate(90deg); */
-            }
-            /* .harmburger-menu, */
-            .bar :before,
-            bar:after {
-                content: '';
-                display: block;
-                position: fixed;
-                height: 4px;
-                margin-top: 5px;
-                width: 20px;
-                cursor: pointer;
-                margin: 6px, 0px;
-                background: rgb(247, 243, 243);
-                transition: all 0.5s ease-in-out;
-                border-radius: 4px solid white;
-                border-color: white;
             }
             .navbar {
-                border: 1px solid red;
                 display: flex;
                 justify-content: space-between;
             }
@@ -89,6 +68,21 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
+                padding-top: 80%;
+                font-size: 30px;
+                background-color: black;
+                z-index: 9;
+                text-align: center;
+            }
+            #nav-link {
+                display: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100vh;
+                width: 100vw;
                 padding-top: 80%;
                 font-size: 30px;
                 background-color: black;
@@ -127,25 +121,27 @@
             }
             #hamburger-menu,
             #close-menu {
-                /* position: static; */
                 display: block;
                 width: unset;
                 height: unset;
                 margin-block: unset;
                 max-width: 100%;
                 cursor: pointer;
-                /* z-index: 100; */
+            }
+            #close-menu {
+                position: absolute;
+                top: 5em;
+                right: 3em;
+                bottom: 0em;
+                display: block;
+                cursor: pointer;
+                z-index: 200;
             }
             #close-menu {
                 display: none;
                 cursor: pointer;
-                z-index: -100;
-            }
-            /* #close-menu {
-                display: none;
-                cursor: pointer;
                 z-index: 100;
-            } */
+            }
             .card {
                 background-color: #181719;
                 box-shadow: 50px;
@@ -180,39 +176,21 @@
             footer {
                 width: 287px;
                 height: 17px;
-                left: 8px;
+                left: 20px;
                 position: absolute;
                 font-family: 'Montserrat';
                 font-style: normal;
                 font-weight: 500;
-                top: 700px;
+                top: 58.5em;
                 font-size: 12px;
                 line-height: 17px;
                 text-align: center;
                 color: #A9A9A9;
             }
-            /* @media screen and (min-width: 700px) {
-                .harmburger-close-menu,
-                #hamburger-menu,
-                #close-menu {
-                    display: flex;
-                }
-            }
-            @media screen and (min-width: 700px) {
-                #close-menu {
-                    display: none;
-                }
-            }
-            @media screen and (min-width: 700px) {
-                .harmburger-close-menu {
-                    display: none;
-                }
-            } */
             @media screen and (min-width: 700px) {
                 body {
                     box-sizing: border-box;
                     margin: 0;
-                    border: 2px solid green;
                 }
             }
             @media screen and (min-width: 600px) {
@@ -307,7 +285,6 @@
                 left: 38em;
                 min-width: 100%;
                 height: 45em;
-                border: 2px solid green;
                 position: relative;
             }
         }
@@ -320,7 +297,6 @@
                 color: #FFFFFF;
                 font-stretch: extra-expanded;
                 line-height: normal;
-                /* margin-left: 17px; */
                 margin-top: 24em;
             }
         }
@@ -389,7 +365,7 @@
                 line-height: 17px;
                 text-align: center;
                 color: #A9A9A9;
-                margin-top: -20em;
+                margin-top: -23em;
             }
         }
         
@@ -408,12 +384,13 @@
 <body>
     <div>
         <nav class="navbar">
-            <button class="text-slate-300 " id="'button">
+            <button class="text-slate-300 " id="'buttons">
                 THIS INTERIOR
         </button>
-            <ul class='nav-list text-white' id="nav-list">
+            <ul class='nav-list text-white' id="nav-list" width="100vw" height="100vh">
                 <li class='nav-item '>
-                    <a class='nav-link' href="#">Home</a>
+                    <a class='nav-link' href="#" width="100vw" height="100vh">Home</a>
+
                 </li>
                 <li class='nav-item'>
                     <a class='nav-link' href="#">Collection</a>
@@ -457,6 +434,7 @@
         const hamburger = document.getElementById('hamburger-menu');
         const closeMenu = document.getElementById('close-menu');
         const navList = document.getElementById('nav-list');
+
         hamburger.addEventListener('click', () => {
             navList.style.display = 'block'
             closeMenu.style.display = 'block'
@@ -467,8 +445,10 @@
             navList.style.display = 'none'
             closeMenu.style.display = 'none'
             hamburger.style.display = 'block'
+
         })
     </script>
+    <!-- <script scr='main.js'></script> -->
 </body>
 
 </html>
